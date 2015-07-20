@@ -4,14 +4,15 @@
 
 class User
 
-  key :id, type: Integer
+  attr_accessor :first_name, :last_name
   
-  key :first_name
-  key :last_name
+  def full_name
+    "#{first_name} #{last_name}"
+  end.depends_on(:first_name, :last_name)
   
-  key :full_name, depends_on: [:first_name, :last_name] do
-    
-  end
+  def expensive_calculation(x, y)
+    # some code
+  end.cache
 
 end
 
