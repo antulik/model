@@ -14,7 +14,7 @@ class User
   def full_name
     keys = [first_name, last_name]
     if @full_name_cache_args == keys
-      @expensive_calculation
+      @full_name
     else
       @full_name_cache_args = keys
       @full_name = "#{first_name} #{last_name}"
@@ -23,7 +23,6 @@ class User
   
   def expensive_calculation(x, y)
     keys = [x, y]
-  
     if @expensive_calculation_cache_args == keys
       @expensive_calculation
     else
