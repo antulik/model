@@ -1,6 +1,8 @@
 # model
 
-Smart caching of ruby methods based on other properties
+Smart caching of ruby methods based on other properties.
+
+Inspired by [Ember.js Computed Properties](http://guides.emberjs.com/v1.10.0/object-model/computed-properties/)
 
 before
 
