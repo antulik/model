@@ -1,5 +1,7 @@
 # model
 
+Smart caching of ruby methods based on other properties
+
 before
 
 ```ruby
