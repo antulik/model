@@ -52,17 +52,26 @@ class User
 
   attr_accessor :first_name, :last_name
   
+  # value will be calculated once and cached until 
+  # first_name and last_name change
+  depends_on :first_name, :last_name
   def full_name
     "#{first_name} #{last_name}"
-  end.depends_on(:first_name, :last_name)
+  end
   
+  # cache will be stored for each combination of x, y
+  # but the total number of cached values will be 
+  # no more than 5
+  cache_with_all_arguments(keep: 5)
   def expensive_calculation(x, y)
     # slow code
-  end.cache
+  end
   
+  # calculate the value once and cache it for later use
+  cache
   def memoize
     # slow code
-  end.cache
+  end
 
 end
 
