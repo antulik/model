@@ -38,6 +38,12 @@ class User
       # slow code
     end
   end
+  
+  def some_list options
+    return to_enum(__callee__, options) unless block_given?
+    
+    # some code
+  end
 
 end
 
@@ -71,6 +77,11 @@ class User
   cache
   def memoize
     # slow code
+  end
+  
+  method_enum
+  def some_list options
+    # some code
   end
 
 end
